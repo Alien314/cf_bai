@@ -1,0 +1,31 @@
+name = "CF Better AI"
+prefix = "CF_BAI"
+author = "BrightCandle"
+template = "cba"
+mainprefix = "x"
+
+[version]
+path = "addons/main/script_version.hpp"
+git_hash = 0
+
+[files]
+include = [
+    "mod.cpp",
+    "*.paa",
+    "LICENSE",
+    "readme.txt",
+    "authors.txt",
+    "readme.md",
+    "*.p3d",
+    "*.rvmat",
+]
+exclude = ["*.psd", "*.png", "*.tga"]
+
+[hemtt.launch.default]
+workshop = [
+    "450814997",  # CBA_A3's Workshop ID
+    "1779063631", # Zeus Enhanced's Workshop ID
+    "463939057",  # ace Workshop ID
+    #"3499977893", # Advanced developer tools
+]
+parameters = ["-world=empty"]
