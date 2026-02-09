@@ -30,7 +30,6 @@ while {(alive _unit) && {_posClose}} do {
 };
 
 LOG_4("Terminating boost for Unit:%1, Alive: %2, Close:%3, AssignedTarget:%4",_unit,alive _unit,_posClose,_assignedTarget);
-
-[_unit,1.0] call FUNC(setSubSkills);
+if (alive _unit) then { [_unit,1.0] call FUNC(setSubSkills); };
 
 _unit setVariable ["CF_BAI_boost",nil,false];
