@@ -18,7 +18,7 @@ Author:
 
 params ["_name"];
 
-if isNil(QGVAR(registeredParameters)) then {
+if (isNil QGVAR(registeredParameters)) then {
 	GVAR(registeredParameters) = ["CF_BAI_BASE"];
 };
 

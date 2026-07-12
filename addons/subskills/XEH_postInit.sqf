@@ -6,4 +6,4 @@ if (not isServer ) exitWith {
 
  INFO("In server mode");
 
-[] call FUNC(updateUnits);
+[] spawn FUNC(updateUnits);

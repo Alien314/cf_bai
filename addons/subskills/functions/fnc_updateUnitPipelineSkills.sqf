@@ -2,13 +2,7 @@
 
 params ["_unit","_terrain_impact"];
 
-FNC_hasBaseSkills = {
-	params ["_unit"];
-
-	_unit getVariable ["CF_BAI_MAXIMUM",false];
-};
-
-FNC_getBaseSkill = {
+/*FNC_getBaseSkill = {
 	params ["_unit","_subSkill","_maximumSkill"];
 
 	private _baseSkill = _maximumSkill;
@@ -19,25 +13,19 @@ FNC_getBaseSkill = {
 	_baseSkill;
 };
 
-FNC_x2 = {
-	params ["_x","_subSkillMultiplier"];
+FNC_getAdjustmentToSkill = {
+	params ["_terrain","_subSkillMultiplier"];
 
 	private _a = 1-_subSkillMultiplier;
-	private _x2 = _x * _x;
+	private _x2 = _terrain * _terrain;
 
 	1 - (_a * _x2);
 };
 
-FNC_getAdjustmentToSkill = {
-	params ["_terrain_impact","_subSkillMultiplier"];
-
-	[_terrain_impact,_subSkillMultiplier] call FNC_x2;
-};
-
-FNC_update_unit_skills = {
+FNC_updateUnitSkills = {
 	params ["_unit","_terrain_impact"];
 	
-	if !([_unit] call FNC_hasBaseSkills) then {
+	if !(_unit getVariable ["CF_BAI_MAXIMUM",false]) then {
 		private _baseSkills = [
 			[_unit,"aimingAccuracy",GVAR(maximum_aimingAccuracy)] call FNC_getBaseSkill,
 			[_unit,"aimingShake",GVAR(maximum_aimingShake)] call FNC_getBaseSkill,
@@ -69,7 +57,7 @@ FNC_update_unit_skills = {
 	];
 
 	[allUnits select 0,"CF_BAI_subskills",_skillParameters] call CF_BAI_fnc_setSkillsParameters;
-};
+};*/
 
 private _combinedTerrainImpact = _terrain_impact;
 
@@ -80,4 +68,4 @@ if (_enemyImpact >= 0) then {
 
 LOG_4("Unit: %1, TerrainImpact: %2, EnemyImpact: %3, Combined Impact: %4",_unit,_terrain_impact,_enemyImpact,_combinedTerrainImpact);
 
-[_unit, _combinedTerrainImpact] call FNC_update_unit_skills;
+[_unit, _combinedTerrainImpact] call FUNC(updateUnitSkills);

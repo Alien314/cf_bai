@@ -1,4 +1,4 @@
-name = "CF_BAI [v2.0.0.alpha2]";
-author = "BrightCandle";
+name = "CF_BAI Modernized [v2.0.4.200]";
+author = "BrightCandle, Alien314";
 actionName = "Website";
-action = "http://www.charliefoxtrotops.com";
+action = "https://github.com/Alien314/cf_bai";
