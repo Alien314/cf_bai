@@ -1,6 +1,6 @@
-name = "CF Better AI"
-prefix = "CF_BAI"
-author = "BrightCandle"
+name = "CF Better AI Modernized"
+prefix = "cf_bai"
+author = "BrightCandle, Alien314"
 template = "cba"
 mainprefix = "x"
 
