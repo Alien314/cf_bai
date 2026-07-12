@@ -17,7 +17,7 @@ while {(alive _unit) && {_posClose}} do {
 		_posClose = ((_position distance2D _assignedTarget) < _range);
 	} else {
 		if ((_assignedTarget distance2D _newTarget) > GVAR(toleranceChange)) exitWith { 
-			_posClose = [0,0,0];
+			_posClose = false;
 		};
 		_position = getPosWorld _assignedTarget;
 		_assignedTarget = _newTarget;
